@@ -22,11 +22,36 @@
 html,body{position:fixed;width:100%;height:100%;overflow:hidden;background:#3a8fd4;touch-action:none;user-select:none;-webkit-user-select:none;margin:0;padding:0;}
 body{font-family:'Cinzel',serif;}
 
-/* ROTATE */
+/* ROTATE - Dikey modda her şeyi döndür */
 #rotateMsg{display:none!important;}
 .rotIcon{font-size:3.5rem;animation:rot 2s ease-in-out infinite;}
 @keyframes rot{0%,100%{transform:rotate(0deg)}40%,60%{transform:rotate(90deg)}}
-@media (orientation:portrait){html{transform:rotate(-90deg);transform-origin:center center;width:100vh;height:100vw;position:fixed;top:calc((100vh - 100vw)/2);left:calc((100vw - 100vh)/2);overflow:hidden;}}
+
+@media (orientation:portrait){
+  html{
+    transform:rotate(-90deg);
+    transform-origin:left top;
+    width:100vh;
+    height:100vw;
+    position:fixed;
+    top:100%;
+    left:0;
+    overflow:hidden;
+    transition:none !important;
+  }
+}
+
+@media (orientation:landscape){
+  html{
+    transform:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+  }
+}
+
 #rotateMsg h2{font-family:'Cinzel Decorative',cursive;color:#fff;font-size:1.3rem;letter-spacing:3px;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
 #rotateMsg p{font-family:'EB Garamond',serif;color:#cce8ff;font-size:1rem;line-height:1.7;}
 
